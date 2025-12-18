@@ -1,0 +1,75 @@
+import math
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("division by zero")
+    return a / b
+
+def absolute(a):
+    return abs(a)
+
+def power(a, b):
+    return a ** b
+
+def square_root(a):
+    if a < 0:
+        raise ValueError("negative input")
+    return math.sqrt(a)
+
+def calculator():
+    while True:
+        print("1. add")
+        print("2. subtract")
+        print("3. multiply")
+        print("4. divide")
+        print("5. absolute")
+        print("6. power")
+        print("7. square root")
+        print("0. exit")
+
+        choice = input("choice: ")
+
+        if choice == "0":
+            break
+
+        try:
+            if choice in ["1", "2", "3", "4", "6"]:
+                a = float(input("a: "))
+                b = float(input("b: "))
+
+                if choice == "1":
+                    print(add(a, b))
+                elif choice == "2":
+                    print(subtract(a, b))
+                elif choice == "3":
+                    print(multiply(a, b))
+                elif choice == "4":
+                    print(divide(a, b))
+                elif choice == "6":
+                    print(power(a, b))
+
+            elif choice == "5":
+                a = float(input("a: "))
+                print(absolute(a))
+
+            elif choice == "7":
+                a = float(input("a: "))
+                print(square_root(a))
+
+            else:
+                print("invalid choice")
+
+        except Exception as e:
+            print("error:", e)
+
+if name == "main":
+    calculator()
